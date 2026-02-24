@@ -1,62 +1,105 @@
-# Quy Trình Ra Quyết Định Chọn Design Pattern (Flowchart)
+# Quy Trình Ra Quyết Định Chọn Design Pattern
 
-Sử dụng hướng dẫn này để xác định pattern phù hợp nhất cho vấn đề của bạn.
+Tài liệu này cung cấp sơ đồ cây quyết định (Decision Tree) giúp bạn chọn đúng Pattern cho vấn đề của mình.
+
+## 1. Dạng Text-based (Dễ đọc nhất)
+
+Hãy trả lời câu hỏi: **"Vấn đề chính của bạn nằm ở đâu?"**
+
+### 🏗️ A. CREATIONAL (Khởi tạo đối tượng)
+> *Vấn đề: "Tôi cần tạo đối tượng, nhưng việc dùng `new ClassName()` quá cứng nhắc hoặc phức tạp."*
+
+- **Q: Bạn có cần đảm bảo chỉ có duy nhất MỘT instance toàn cục?**
+  - ✅ YES -> **[Singleton](01.Creational/Singleton)** (e.g., Config, Connection Pool)
+- **Q: Bạn có cần tạo đối tượng phức tạp qua từng bước?**
+  - ✅ YES -> **[Builder](01.Creational/Builder)** (e.g., SQL Query Builder)
+- **Q: Bạn muốn tạo một họ các đối tượng liên quan (Window, Button, Scrollbar)?**
+  - ✅ YES -> **[Abstract Factory](01.Creational/AbstractFactory)** (e.g., UI Theme)
+- **Q: Bạn muốn subclass quyết định loại đối tượng nào được tạo?**
+  - ✅ YES -> **[Factory Method](01.Creational/FactoryMethod)** (e.g., Logistics -> Truck/Ship)
+- **Q: Bạn muốn tạo bản sao từ một mẫu có sẵn thay vì tạo mới?**
+  - ✅ YES -> **[Prototype](01.Creational/Prototype)** (e.g., Clone Settings)
+
+---
+
+### 🧩 B. STRUCTURAL (Cấu trúc hệ thống)
+> *Vấn đề: "Tôi cần kết hợp các class lại với nhau, nhưng interface không khớp hoặc cấu trúc quá rối."*
+
+- **Q: Interface không tương thích?**
+  - ✅ YES -> **[Adapter](02.Structural/Adapter)** (e.g., 3rd Party Payment)
+- **Q: Muốn thêm hành vi động vào đối tượng mà không sửa class gốc?**
+  - ✅ YES -> **[Decorator](02.Structural/Decorator)** (e.g., Middleware, Logging Wrapper)
+- **Q: Hệ thống con quá phức tạp, cần một interface đơn giản?**
+  - ✅ YES -> **[Facade](02.Structural/Facade)** (e.g., Order System Wrapper)
+- **Q: Cần xử lý cấu trúc cây (Folder/File)?**
+  - ✅ YES -> **[Composite](02.Structural/Composite)** (e.g., Menu đa cấp)
+- **Q: Đối tượng tốn quá nhiều RAM, cần chia sẻ trạng thái?**
+  - ✅ YES -> **[Flyweight](02.Structural/Flyweight)** (e.g., Game Sprites)
+- **Q: Cần kiểm soát truy cập vào đối tượng (Lazy load, Security)?**
+  - ✅ YES -> **[Proxy](02.Structural/Proxy)** (e.g., Virtual Proxy)
+- **Q: Muốn tách rời Abstraction khỏi Implementation để phát triển độc lập?**
+  - ✅ YES -> **[Bridge](02.Structural/Bridge)** (e.g., Remote Control & Device)
+
+---
+
+### 📡 C. BEHAVIORAL (Hành vi & Giao tiếp)
+> *Vấn đề: "Tôi cần quản lý cách các đối tượng giao tiếp và phân công trách nhiệm."*
+
+- **Q: Muốn thay đổi thuật toán lúc chạy (Runtime)?**
+  - ✅ YES -> **[Strategy](03.Behavioral/Strategy)** (e.g., Discount Calculation)
+- **Q: Cần thông báo cho nhiều đối tượng khi một đối tượng thay đổi?**
+  - ✅ YES -> **[Observer](03.Behavioral/Observer)** (e.g., Event Listener)
+- **Q: Muốn duyệt qua danh sách mà không quan tâm cấu trúc lưu trữ?**
+  - ✅ YES -> **[Iterator](03.Behavioral/Iterator)** (e.g., Foreach Loop)
+- **Q: Hành vi thay đổi theo trạng thái nội tại?**
+  - ✅ YES -> **[State](03.Behavioral/State)** (e.g., Order Status Flow)
+- **Q: Muốn đóng gói request để Undo/Redo hoặc Queue?**
+  - ✅ YES -> **[Command](03.Behavioral/Command)** (e.g., Text Editor Undo)
+- **Q: Xử lý request qua chuỗi các bước (Middleware)?**
+  - ✅ YES -> **[Chain of Responsibility](03.Behavioral/ChainOfResp)** (e.g., Auth Pipeline)
+- **Q: Giảm sự phụ thuộc chéo giữa các object (Chat Room)?**
+  - ✅ YES -> **[Mediator](03.Behavioral/Mediator)** (e.g., Chat Hub)
+- **Q: Định nghĩa khung thuật toán, để con cái thực hiện chi tiết?**
+  - ✅ YES -> **[Template Method](03.Behavioral/TemplateMethod)** (e.g., Data Import)
+
+---
+
+## 2. Dạng Sơ đồ (Visual Chart)
+
+Dưới đây là sơ đồ tổng quan sử dụng Mermaid. Nếu bạn dùng VS Code, hãy cài extension **Markdown Preview Mermaid Support** để xem.
 
 ```mermaid
 graph TD
-    Start[Bắt đầu: Vấn đề của bạn là gì?] --> NeedCreate{Cần tạo đối tượng?}
-    
-    %% Creational Group
-    NeedCreate -- Yes --> ComplexCreation{Việc tạo có phức tạp/nhiều bước?}
-    ComplexCreation -- Yes --> Builder[**Builder**: Xây dựng từng bước]
-    ComplexCreation -- No --> Family{Cần tạo một họ các đối tượng liên quan?}
-    Family -- Yes --> AbstractFactory[**Abstract Factory**: Họ đối tượng]
-    Family -- No --> OneInstance{Chỉ cần MỘT instance duy nhất?}
-    OneInstance -- Yes --> Singleton[**Singleton**: Duy nhất toàn cục]
-    OneInstance -- No --> SubclassDecide{Muốn subclass quyết định loại object?}
-    SubclassDecide -- Yes --> FactoryMethod[**Factory Method**: Subclass quyết định]
-    SubclassDecide -- No --> Clone{Muốn copy từ mẫu có sẵn?}
-    Clone -- Yes --> Prototype[**Prototype**: Clone object]
-    
-    %% Structural Group
-    NeedCreate -- No --> NeedStructure{Cần tổ chức Class/Object?}
-    NeedStructure -- Yes --> InterfaceMatch{Interface có khớp không?}
-    InterfaceMatch -- No --> Adapter[**Adapter**: Chuyển đổi Interface]
-    InterfaceMatch -- Yes --> AddBehavior{Muốn thêm hành vi động?}
-    AddBehavior -- Yes --> Decorator[**Decorator**: Thêm hành vi wrapper]
-    AddBehavior -- No --> SimplifySystem{Hệ thống con quá phức tạp?}
-    SimplifySystem -- Yes --> Facade[**Facade**: Interface đơn giản hóa]
-    SimplifySystem -- No --> Hierarchy{Cần xử lý cây phân cấp?}
-    Hierarchy -- Yes --> Composite[**Composite**: Cấu trúc cây]
-    Hierarchy -- No --> ImplementationSplit{Muốn tách Abstraction & Implementation?}
-    ImplementationSplit -- Yes --> Bridge[**Bridge**: Cầu nối Abstraction-Impl]
-    ImplementationSplit -- No --> ResourceHeavy{Đối tượng tốn nhiều RAM/Resource?}
-    ResourceHeavy -- Yes --> Flyweight[**Flyweight**: Chia sẻ trạng thái]
-    ResourceHeavy -- No --> ControlAccess{Cần kiểm soát truy cập?}
-    ControlAccess -- Yes --> Proxy[**Proxy**: Đại diện/Lazy Load]
-    
-    %% Behavioral Group
-    NeedStructure -- No --> NeedComm{Cần giao tiếp giữa các Object?}
-    NeedComm -- Yes --> Algorithm{Muốn thay đổi thuật toán lúc runtime?}
-    Algorithm -- Yes --> Strategy[**Strategy**: Thay thế thuật toán]
-    Algorithm -- No --> StateChange{Hành vi đổi theo trạng thái?}
-    StateChange -- Yes --> State[**State**: Máy trạng thái]
-    StateChange -- No --> Notify{Cần báo cho object khác khi đổi?}
-    Notify -- Yes --> Observer[**Observer**: Pub/Sub]
-    Notify -- No --> LooseCouple{Muốn giảm sự phụ thuộc trực tiếp?}
-    LooseCouple -- Yes --> Mediator[**Mediator**: Trung gian điều phối]
-    LooseCouple -- No --> Traverse{Cần duyệt qua collection?}
-    Traverse -- Yes --> Iterator[**Iterator**: Duyệt tuần tự]
-    Traverse -- No --> Chain{Cần xử lý qua nhiều bước?}
-    Chain -- Yes --> ChainOfResp[**Chain of Responsibility**: Chuỗi xử lý]
-    Chain -- No --> ActionRequest{Muốn đóng gói request?}
-    ActionRequest -- Yes --> Command[**Command**: Undo/Queue]
-    ActionRequest -- No --> SaveState{Cần lưu/khôi phục trạng thái?}
-    SaveState -- Yes --> Memento[**Memento**: Snapshot]
-    SaveState -- No --> TemplateStruct{Có khung thuật toán cố định?}
-    TemplateStruct -- Yes --> TemplateMethod[**Template Method**: Khung xương]
-    TemplateStruct -- No --> VisitorCheck{Muốn thêm operation mới vào class cũ?}
-    VisitorCheck -- Yes --> Visitor[**Visitor**: Thêm hành vi từ ngoài]
+    Root[Vấn đề của bạn là gì?]
+    Root -->|Tạo Object| Creation(CREATIONAL)
+    Root -->|Tổ chức Class| Structure(STRUCTURAL)
+    Root -->|Giao tiếp| Behavior(BEHAVIORAL)
+
+    %% CREATIONAL
+    Creation -->|Duy nhất| Singleton
+    Creation -->|Phức tạp từng bước| Builder
+    Creation -->|Họ đối tượng| AbstractFactory
+    Creation -->|Subclass quyết định| FactoryMethod
+    Creation -->|Copy mẫu| Prototype
+
+    %% STRUCTURAL
+    Structure -->|Khác Interface| Adapter
+    Structure -->|Thêm hành vi động| Decorator
+    Structure -->|Interface đơn giản| Facade
+    Structure -->|Cấu trúc cây| Composite
+    Structure -->|Tối ưu RAM| Flyweight
+    Structure -->|Kiểm soát truy cập| Proxy
+    Structure -->|Tách Abstraction| Bridge
+
+    %% BEHAVIORAL
+    Behavior -->|Thay thuật toán| Strategy
+    Behavior -->|Pub/Sub| Observer
+    Behavior -->|Duyệt List| Iterator
+    Behavior -->|Máy trạng thái| State
+    Behavior -->|Undo/Queue| Command
+    Behavior -->|Chuỗi xử lý| ChainOfResp
+    Behavior -->|Trung gian| Mediator
+    Behavior -->|Khung thuật toán| TemplateMethod
 ```
 
 ## Hướng dẫn nhanh
