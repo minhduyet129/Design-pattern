@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "ms-dotnettools.csdevkit",
+    "ms-dotnettools.csharp",
+    "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+    "yzhang.markdown-all-in-one"
+  ]
+}
