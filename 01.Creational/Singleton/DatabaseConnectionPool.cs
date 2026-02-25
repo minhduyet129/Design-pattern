@@ -28,13 +28,15 @@ namespace Singleton.RealWorld
             }
         }
 
-        public string GetConnection()
+        public PooledConnection GetConnection()
         {
             if (_connections.TryTake(out string? connection))
             {
-                return connection ?? "Conn_Unknown";
+                Console.WriteLine($"-> Leased: {connection}");
+                return new PooledConnection(connection, this);
             }
-            return "No connections available!";
+            Console.WriteLine("-> Failed to lease: Pool empty!");
+            return null;
         }
 
         public void ReleaseConnection(string connection)
