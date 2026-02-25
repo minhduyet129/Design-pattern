@@ -14,27 +14,47 @@ namespace Singleton
             // 1. Basic Usage
             Console.WriteLine("--- 1. Basic Lazy Singleton ---");
             LazySingleton.Instance.DoSomething();
-            LazySingleton.Instance.DoSomething(); // Constructor not called again
             
             // 2. Configuration Manager
             Console.WriteLine("\n--- 2. Configuration Manager ---");
             var dbConn = ConfigurationManager.Instance.GetSetting("DbConnectionString");
             Console.WriteLine($"DB Connection: {dbConn}");
 
-            // 3. Logger (Thread Safety Check)
-            Console.WriteLine("\n--- 3. Logger (Multi-threaded) ---");
-            Parallel.For(0, 5, i =>
-            {
-                Logger.Instance.Log($"Message from thread {Task.CurrentId}");
-            });
-
-            // 4. Connection Pool
-            Console.WriteLine("\n--- 4. Connection Pool ---");
+            // 3. Connection Pool with IDisposable (The "using" pattern)
+            Console.WriteLine("\n--- 3. Connection Pool (IDisposable Pattern) ---");
             var pool = DatabaseConnectionPool.Instance;
-            Console.WriteLine($"Client 1 got: {pool.GetConnection()}");
-            Console.WriteLine($"Client 2 got: {pool.GetConnection()}");
-            Console.WriteLine($"Client 3 got: {pool.GetConnection()}");
-            Console.WriteLine($"Client 4 got: {pool.GetConnection()}"); // Should be empty
+
+            // Client 1: Uses connection and automatically releases it
+            Console.WriteLine("\n[Client 1] Requesting connection...");
+            using (var conn1 = pool.GetConnection())
+            {
+                if (conn1 != null) conn1.ExecuteQuery("SELECT * FROM Users");
+            } // conn1 is disposed here -> returned to pool
+
+            // Client 2
+            Console.WriteLine("\n[Client 2] Requesting connection...");
+            using (var conn2 = pool.GetConnection())
+            {
+                if (conn2 != null) conn2.ExecuteQuery("SELECT * FROM Products");
+            }
+
+            // Simulate heavy load (Pool size = 3)
+            Console.WriteLine("\n[Simulating High Load]");
+            using (var c1 = pool.GetConnection())
+            using (var c2 = pool.GetConnection())
+            using (var c3 = pool.GetConnection())
+            {
+                Console.WriteLine("Pool is now exhausted.");
+                var c4 = pool.GetConnection(); // Should fail or wait
+                if (c4 == null) Console.WriteLine("Client 4 waiting... (Pool Empty)");
+            } // c1, c2, c3 released here
+
+            // Check if returned connections are reusable
+            Console.WriteLine("\n[Client 5] Retry after release...");
+            using (var c5 = pool.GetConnection())
+            {
+                if (c5 != null) Console.WriteLine("Client 5 got connection successfully!");
+            }
 
             Console.WriteLine("\nEnd of Singleton Demo.");
         }
