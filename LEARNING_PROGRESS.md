@@ -9,7 +9,11 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
   - [x] Thread-safe & Lazy Loading
   - [x] Real-world Example (Config, Logger)
   - [x] Benchmark Test
-- [ ] **Factory Method**: Subclass quyết định khởi tạo.
+- [x] **Factory Method**: Subclass quyết định khởi tạo.
+  - [x] Interface Product (ITransport)
+  - [x] Concrete Products (Truck, Ship)
+  - [x] Creator & Concrete Creators (Logistics)
+  - [x] Demo Client Code
 - [ ] **Abstract Factory**: Tạo họ đối tượng liên quan.
 - [ ] **Builder**: Xây dựng đối tượng phức tạp từng bước.
 - [ ] **Prototype**: Copy đối tượng có sẵn.
