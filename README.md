@@ -27,11 +27,23 @@ Khi bạn chuyển sang máy mới (hoặc từ công ty về nhà), hãy làm t
 4. **Bắt đầu code:**
    Mở folder pattern tiếp theo và thực hành.
 
-## 🛠 Cấu trúc dự án
-Source code được tổ chức theo nhóm Pattern của GoF:
+## 🛠 Cấu trúc dự án & Cách học với AI Assistant
 
+Để việc học trở nên nhẹ nhàng, chúng ta sử dụng AI Assistant (như Trae, Cursor, Windsurf) để tự động hóa các công việc lặp lại.
+
+**Quy tắc vàng:**
+Trong dự án này có 2 file cấu hình quan trọng mà bạn **KHÔNG ĐƯỢC XÓA**:
+1.  **`.cursorrules`**: Chứa quy trình chuẩn để triển khai một Pattern (Code -> Verify -> Docs -> Track).
+2.  **`_TEMPLATE_NOTES.md`**: File mẫu để AI biết cách viết tài liệu ghi chú chuẩn.
+
+**Cách học:**
+Khi bạn muốn học một pattern mới (ví dụ: Builder), bạn chỉ cần chat với AI:
+> "Triển khai Builder Pattern cho tôi."
+
+AI sẽ tự động đọc `.cursorrules` và thực hiện đầy đủ các bước chuẩn hóa mà không cần bạn phải nhắc nhở hay cấu hình gì thêm.
+
+Source code được tổ chức theo nhóm Pattern của GoF:
 - `01.Creational/`: Nhóm khởi tạo (Singleton, Factory, Builder...)
-  - `Singleton/`: Ví dụ mẫu về Singleton (Basic, Thread-safe, Real-world).
 - `02.Structural/`: Nhóm cấu trúc (Adapter, Facade...)
 - `03.Behavioral/`: Nhóm hành vi (Observer, Strategy...)
 - `00.Benchmarks/`: Dự án đo lường hiệu năng của các Pattern so với cách code thông thường.
