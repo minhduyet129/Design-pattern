@@ -14,7 +14,10 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
   - [x] Concrete Products (Truck, Ship)
   - [x] Creator & Concrete Creators (Logistics)
   - [x] Demo Client Code
-- [ ] **Abstract Factory**: Tạo họ đối tượng liên quan.
+- [x] **Abstract Factory**: Tạo họ đối tượng liên quan.
+  - [x] Abstract Factory & Concrete Factories (IGUIFactory, WinFactory, MacFactory)
+  - [x] Abstract Products & Concrete Products (IButton, ICheckbox)
+  - [x] Client Code Implementation
 - [ ] **Builder**: Xây dựng đối tượng phức tạp từng bước.
 - [ ] **Prototype**: Copy đối tượng có sẵn.
 
