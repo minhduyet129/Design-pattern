@@ -2,6 +2,8 @@
   <Folder Name="/01.Creational/">
     <Project Path="01.Creational/AbstractFactory/AbstractFactory.csproj" />
     <Project Path="01.Creational/Builder/Builder.csproj" />
+    <Project Path="01.Creational/FactoryMethod/FactoryMethod.csproj" />
+    <Project Path="01.Creational/Prototype/Prototype.csproj" />
     <Project Path="01.Creational/Singleton/Singleton.csproj" />
   </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />

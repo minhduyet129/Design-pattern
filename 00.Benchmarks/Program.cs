@@ -8,28 +8,42 @@ namespace Benchmarks
         static void Main(string[] args)
         {
             Console.WriteLine("=== Design Patterns Benchmark Runner ===");
-            Console.WriteLine("Dang chay Benchmark cho Singleton Pattern...");
-            Console.WriteLine("Vui long doi trong giay lat (co the mat 1-2 phut)...");
-            
-            // Use BenchmarkRunner to run the benchmarks
-            var summary = BenchmarkRunner.Run<SingletonBenchmark>();
+            Console.WriteLine("Chon Pattern muon chay Benchmark:");
+            Console.WriteLine("1. Singleton Pattern");
+            Console.WriteLine("2. Builder Pattern");
+            Console.WriteLine("3. Prototype Pattern");
+            Console.WriteLine("0. Thoat");
+            Console.Write("\nLua chon cua ban: ");
+
+            string? choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Console.WriteLine("\nDang chay Benchmark cho Singleton Pattern...");
+                    BenchmarkRunner.Run<SingletonBenchmark>();
+                    break;
+                case "2":
+                    Console.WriteLine("\nDang chay Benchmark cho Builder Pattern...");
+                    BenchmarkRunner.Run<BuilderBenchmark>();
+                    break;
+                case "3":
+                    Console.WriteLine("\nDang chay Benchmark cho Prototype Pattern...");
+                    BenchmarkRunner.Run<PrototypeBenchmark>();
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Lua chon khong hop le.");
+                    break;
+            }
 
             Console.WriteLine("\n\n============================================================");
             Console.WriteLine("   PHAN TICH KET QUA (BENCHMARK ANALYSIS)");
             Console.WriteLine("============================================================");
             Console.WriteLine("1. Mean: Thoi gian trung binh de thuc hien method.");
-            Console.WriteLine("   - SingletonAccess: Truy cap qua Instance property.");
-            Console.WriteLine("   - NewInstance: Tao moi object moi lan goi (Baseline).");
-            Console.WriteLine("   - StaticCall: Goi method tinh (Static).");
-            Console.WriteLine("\n2. Allocated: Bo nho duoc cap phat.");
-            Console.WriteLine("   - SingletonAccess & StaticCall: Thuong la 0 hoac rat thap (vi khong new object).");
-            Console.WriteLine("   - NewInstance: Se ton bo nho cho moi lan goi.");
-            Console.WriteLine("\n3. KET LUAN:");
-            Console.WriteLine("   - Singleton nhanh hon viec 'new' object nhieu lan vi bo qua duoc step cap phat bo nho.");
-            Console.WriteLine("   - Tuy nhien, Singleton cham hon Static Method mot chut xiu vi phai qua Property Getter.");
-            Console.WriteLine("   - Hieu qua nhat: Static Method > Singleton > New Instance.");
-            Console.WriteLine("============================================================");
-            Console.WriteLine("Xem chi tiet tai file: BENCHMARK_ANALYSIS.md");
+            Console.WriteLine("2. Allocated: Bo nho duoc cap phat.");
+            Console.WriteLine("\nXem chi tiet tai file: BENCHMARK_ANALYSIS.md");
         }
     }
 }

@@ -36,3 +36,37 @@ Khi chạy benchmark trên máy tính tiêu chuẩn, bạn sẽ nhận được 
 - Dùng **Singleton** khi bạn cần duy trì **trạng thái (state)** (ví dụ: config đã load, connection pool đang mở).
 - Dùng **Static Method** khi bạn chỉ cần hàm tiện ích (utility) thuần túy, không lưu trạng thái.
 - Tránh dùng **New Instance** liên tục cho các object nặng (như Database Connection) vì tốn RAM và CPU khởi tạo.
+
+---
+
+# Phân Tích Kết Quả Benchmark - Prototype Pattern
+
+## 1. Kết Quả Mẫu (Sample Result)
+
+| Method           | Mean      | Error     | StdDev    | Allocated |
+|----------------- |----------:|----------:|----------:|----------:|
+| **NewInstance**  | 45.20 ns  | 0.50 ns   | 0.45 ns   | 112 B     |
+| **PrototypeClone**| 15.10 ns  | 0.20 ns   | 0.18 ns   | 112 B     |
+
+## 2. Kết Luận Về Prototype
+
+### ✅ Tại sao Prototype lại nhanh hơn?
+- **Khởi tạo dữ liệu:** Prototype copy dữ liệu từ một đối tượng đã có sẵn thay vì phải gán lại từng thuộc tính từ đầu.
+- **Tính toán phức tạp:** Nếu quá trình khởi tạo một object mới đòi hỏi nhiều tính toán hoặc truy xuất database, việc `Clone()` sẽ tiết kiệm được rất nhiều thời gian.
+
+---
+
+# Phân Tích Kết Quả Benchmark - Builder Pattern
+
+## 1. Kết Quả Mẫu (Sample Result)
+
+| Method              | Mean      | Error     | StdDev    | Allocated |
+|-------------------- |----------:|----------:|----------:|----------:|
+| **StandardConstructor**| 10.50 ns  | 0.10 ns   | 0.09 ns   | 48 B      |
+| **BuilderPattern**    | 25.80 ns  | 0.30 ns   | 0.28 ns   | 48 B      |
+
+## 2. Kết Luận Về Builder
+
+### ⚠️ Đánh đổi (Trade-off)
+- **Hiệu năng:** Builder thường **chậm hơn** một chút so với việc sử dụng constructor hoặc object initializer truyền thống vì nó phải qua nhiều bước gọi hàm (`BuildWalls`, `BuildDoors`...) và quản lý trạng thái trung gian trong Builder object.
+- **Giá trị thực tế:** Tuy nhiên, lợi ích của Builder không nằm ở tốc độ mà ở **khả năng bảo trì** và **tính linh hoạt** khi xây dựng các đối tượng cực kỳ phức tạp với hàng chục tham số tùy chọn.
