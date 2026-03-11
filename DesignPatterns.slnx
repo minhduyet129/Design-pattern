@@ -6,5 +6,8 @@
     <Project Path="01.Creational/Prototype/Prototype.csproj" />
     <Project Path="01.Creational/Singleton/Singleton.csproj" />
   </Folder>
+  <Folder Name="/02.Structural/">
+    <Project Path="02.Structural/Adapter/Adapter.csproj" />
+  </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />
 </Solution>

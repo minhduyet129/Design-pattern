@@ -22,7 +22,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Prototype**: Copy đối tượng có sẵn.
 
 ## 🟡 2. Structural Patterns (Cấu trúc)
-- [ ] **Adapter**: Chuyển đổi giao diện.
+- [x] **Adapter**: Chuyển đổi giao diện.
 - [ ] **Bridge**: Tách rời Abstraction và Implementation.
 - [ ] **Composite**: Cấu trúc cây (Menu, Folder).
 - [ ] **Decorator**: Thêm hành vi động (Wrapper).
