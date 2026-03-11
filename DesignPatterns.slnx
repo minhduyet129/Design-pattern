@@ -9,6 +9,7 @@
   <Folder Name="/02.Structural/">
     <Project Path="02.Structural/Adapter/Adapter.csproj" />
     <Project Path="02.Structural/Bridge/Bridge.csproj" />
+    <Project Path="02.Structural/Composite/Composite.csproj" />
   </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />
 </Solution>
