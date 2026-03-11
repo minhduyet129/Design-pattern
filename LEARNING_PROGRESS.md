@@ -23,7 +23,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 
 ## 🟡 2. Structural Patterns (Cấu trúc)
 - [x] **Adapter**: Chuyển đổi giao diện.
-- [ ] **Bridge**: Tách rời Abstraction và Implementation.
+- [x] **Bridge**: Tách rời Abstraction và Implementation.
 - [ ] **Composite**: Cấu trúc cây (Menu, Folder).
 - [ ] **Decorator**: Thêm hành vi động (Wrapper).
 - [ ] **Facade**: Đơn giản hóa hệ thống phức tạp.
