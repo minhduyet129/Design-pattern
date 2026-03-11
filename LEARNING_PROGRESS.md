@@ -18,7 +18,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
   - [x] Abstract Factory & Concrete Factories (IGUIFactory, WinFactory, MacFactory)
   - [x] Abstract Products & Concrete Products (IButton, ICheckbox)
   - [x] Client Code Implementation
-- [ ] **Builder**: Xây dựng đối tượng phức tạp từng bước.
+- [x] **Builder**: Xây dựng đối tượng phức tạp từng bước.
 - [ ] **Prototype**: Copy đối tượng có sẵn.
 
 ## 🟡 2. Structural Patterns (Cấu trúc)
