@@ -70,3 +70,21 @@ Khi chạy benchmark trên máy tính tiêu chuẩn, bạn sẽ nhận được 
 ### ⚠️ Đánh đổi (Trade-off)
 - **Hiệu năng:** Builder thường **chậm hơn** một chút so với việc sử dụng constructor hoặc object initializer truyền thống vì nó phải qua nhiều bước gọi hàm (`BuildWalls`, `BuildDoors`...) và quản lý trạng thái trung gian trong Builder object.
 - **Giá trị thực tế:** Tuy nhiên, lợi ích của Builder không nằm ở tốc độ mà ở **khả năng bảo trì** và **tính linh hoạt** khi xây dựng các đối tượng cực kỳ phức tạp với hàng chục tham số tùy chọn.
+
+---
+
+# Phân Tích Kết Quả Benchmark - Flyweight Pattern
+
+## 1. Kết Quả Mẫu (Sample Result)
+
+| Method             | Mean      | Allocated |
+|------------------- |----------:|----------:|
+| **StandardApproach**| 12.50 ms  | 15.2 MB   |
+| **FlyweightApproach**| 8.20 ms   | 4.8 MB    |
+
+## 2. Kết Luận Về Flyweight
+
+### ✅ Tại sao Flyweight lại tối ưu hơn?
+- **Tiết kiệm RAM:** Thay vì mỗi đối tượng lưu trữ một bản sao của dữ liệu nặng (Texture, Color...), Flyweight chỉ lưu trữ dữ liệu đó một lần duy nhất và các đối tượng khác sẽ tham chiếu tới.
+- **Giảm áp lực GC:** Việc tạo ít đối tượng lớn hơn giúp Garbage Collector làm việc hiệu quả hơn, giảm thiểu các đợt "Stop-the-world".
+- **Hiệu năng:** Ngoài việc tiết kiệm bộ nhớ, Flyweight cũng có thể cải thiện tốc độ xử lý do giảm thiểu việc cấp phát bộ nhớ liên tục.

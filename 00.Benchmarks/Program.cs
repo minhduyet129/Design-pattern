@@ -12,6 +12,7 @@ namespace Benchmarks
             Console.WriteLine("1. Singleton Pattern");
             Console.WriteLine("2. Builder Pattern");
             Console.WriteLine("3. Prototype Pattern");
+            Console.WriteLine("4. Flyweight Pattern");
             Console.WriteLine("0. Thoat");
             Console.Write("\nLua chon cua ban: ");
 
@@ -30,6 +31,10 @@ namespace Benchmarks
                 case "3":
                     Console.WriteLine("\nDang chay Benchmark cho Prototype Pattern...");
                     BenchmarkRunner.Run<PrototypeBenchmark>();
+                    break;
+                case "4":
+                    Console.WriteLine("\nDang chay Benchmark cho Flyweight Pattern...");
+                    BenchmarkRunner.Run<FlyweightBenchmark>();
                     break;
                 case "0":
                     return;

@@ -27,7 +27,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Composite**: Cấu trúc cây (Menu, Folder).
 - [x] **Decorator**: Thêm hành vi động (Wrapper).
 - [x] **Facade**: Đơn giản hóa hệ thống phức tạp.
-- [ ] **Flyweight**: Chia sẻ tài nguyên (RAM optimization).
+- [x] **Flyweight**: Chia sẻ tài nguyên (RAM optimization).
 - [ ] **Proxy**: Kiểm soát truy cập (Lazy load, Security).
 
 ## 🔵 3. Behavioral Patterns (Hành vi)

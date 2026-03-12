@@ -1,9 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
     <ProjectReference Include="..\01.Creational\Singleton\Singleton.csproj" />
     <ProjectReference Include="..\01.Creational\Builder\Builder.csproj" />
     <ProjectReference Include="..\01.Creational\Prototype\Prototype.csproj" />
+    <ProjectReference Include="..\02.Structural\Flyweight\Flyweight.csproj" />
   </ItemGroup>
 
   <ItemGroup>

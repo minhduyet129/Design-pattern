@@ -12,6 +12,7 @@
     <Project Path="02.Structural/Composite/Composite.csproj" />
     <Project Path="02.Structural/Decorator/Decorator.csproj" />
     <Project Path="02.Structural/Facade/Facade.csproj" />
+    <Project Path="02.Structural/Flyweight/Flyweight.csproj" />
   </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />
 </Solution>
