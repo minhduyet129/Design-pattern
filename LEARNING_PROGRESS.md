@@ -31,7 +31,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Proxy**: Kiểm soát truy cập (Lazy load, Security).
 
 ## 🔵 3. Behavioral Patterns (Hành vi)
-- [ ] **Chain of Responsibility**: Chuỗi xử lý request.
+- [x] **Chain of Responsibility**: Chuỗi xử lý request.
 - [ ] **Command**: Đóng gói request (Undo/Redo).
 - [ ] **Interpreter**: Xử lý ngữ pháp/ngôn ngữ.
 - [ ] **Iterator**: Duyệt danh sách.
