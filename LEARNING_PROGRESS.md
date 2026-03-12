@@ -25,7 +25,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Adapter**: Chuyển đổi giao diện.
 - [x] **Bridge**: Tách rời Abstraction và Implementation.
 - [x] **Composite**: Cấu trúc cây (Menu, Folder).
-- [ ] **Decorator**: Thêm hành vi động (Wrapper).
+- [x] **Decorator**: Thêm hành vi động (Wrapper).
 - [ ] **Facade**: Đơn giản hóa hệ thống phức tạp.
 - [ ] **Flyweight**: Chia sẻ tài nguyên (RAM optimization).
 - [ ] **Proxy**: Kiểm soát truy cập (Lazy load, Security).
