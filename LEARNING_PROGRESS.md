@@ -40,7 +40,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Observer**: Pub/Sub model.
 - [x] **State**: Thay đổi hành vi theo trạng thái.
 - [x] **Strategy**: Thay đổi thuật toán (Sort, Tax).
-- [ ] **Template Method**: Khung thuật toán.
+- [x] **Template Method**: Khung thuật toán.
 - [ ] **Visitor**: Thêm operation mà không sửa class.
 
 ## 🏁 Final Project
