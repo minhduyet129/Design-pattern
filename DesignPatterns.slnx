@@ -11,6 +11,7 @@
     <Project Path="02.Structural/Bridge/Bridge.csproj" />
     <Project Path="02.Structural/Composite/Composite.csproj" />
     <Project Path="02.Structural/Decorator/Decorator.csproj" />
+    <Project Path="02.Structural/Facade/Facade.csproj" />
   </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />
 </Solution>
