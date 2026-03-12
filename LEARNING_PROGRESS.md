@@ -35,7 +35,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Command**: Đóng gói request (Undo/Redo).
 - [x] **Interpreter**: Xử lý ngữ pháp/ngôn ngữ.
 - [x] **Iterator**: Duyệt danh sách.
-- [ ] **Mediator**: Điều phối tương tác (Chat room).
+- [x] **Mediator**: Điều phối tương tác (Chat room).
 - [ ] **Memento**: Lưu trạng thái (Snapshot).
 - [ ] **Observer**: Pub/Sub model.
 - [ ] **State**: Thay đổi hành vi theo trạng thái.
