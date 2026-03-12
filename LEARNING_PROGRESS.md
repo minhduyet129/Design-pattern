@@ -36,7 +36,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Interpreter**: Xử lý ngữ pháp/ngôn ngữ.
 - [x] **Iterator**: Duyệt danh sách.
 - [x] **Mediator**: Điều phối tương tác (Chat room).
-- [ ] **Memento**: Lưu trạng thái (Snapshot).
+- [x] **Memento**: Lưu trạng thái (Snapshot).
 - [ ] **Observer**: Pub/Sub model.
 - [ ] **State**: Thay đổi hành vi theo trạng thái.
 - [ ] **Strategy**: Thay đổi thuật toán (Sort, Tax).

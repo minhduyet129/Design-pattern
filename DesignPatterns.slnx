@@ -21,6 +21,7 @@
     <Project Path="03.Behavioral/Interpreter/Interpreter.csproj" />
     <Project Path="03.Behavioral/Iterator/Iterator.csproj" />
     <Project Path="03.Behavioral/Mediator/Mediator.csproj" />
+    <Project Path="03.Behavioral/Memento/Memento.csproj" />
   </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />
 </Solution>
