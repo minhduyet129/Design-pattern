@@ -28,7 +28,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Decorator**: Thêm hành vi động (Wrapper).
 - [x] **Facade**: Đơn giản hóa hệ thống phức tạp.
 - [x] **Flyweight**: Chia sẻ tài nguyên (RAM optimization).
-- [ ] **Proxy**: Kiểm soát truy cập (Lazy load, Security).
+- [x] **Proxy**: Kiểm soát truy cập (Lazy load, Security).
 
 ## 🔵 3. Behavioral Patterns (Hành vi)
 - [ ] **Chain of Responsibility**: Chuỗi xử lý request.
