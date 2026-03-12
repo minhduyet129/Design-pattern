@@ -17,6 +17,7 @@
   </Folder>
   <Folder Name="/03.Behavioral/">
     <Project Path="03.Behavioral/ChainOfResponsibility/ChainOfResponsibility.csproj" />
+    <Project Path="03.Behavioral/Command/Command.csproj" />
   </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />
 </Solution>

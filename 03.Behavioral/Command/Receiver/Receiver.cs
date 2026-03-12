@@ -1,0 +1,19 @@
+namespace Command.Receiver;
+
+/// <summary>
+/// The Receiver class contains some important business logic. They know how to
+/// perform all kinds of operations, associated with carrying out a request. In
+/// fact, any class may serve as a Receiver.
+/// </summary>
+public class Receiver
+{
+    public void DoSomething(string a)
+    {
+        Console.WriteLine($"Receiver: Working on ({a}.)");
+    }
+
+    public void DoSomethingElse(string b)
+    {
+        Console.WriteLine($"Receiver: Also working on ({b}.)");
+    }
+}
