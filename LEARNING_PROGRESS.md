@@ -38,7 +38,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Mediator**: Điều phối tương tác (Chat room).
 - [x] **Memento**: Lưu trạng thái (Snapshot).
 - [x] **Observer**: Pub/Sub model.
-- [ ] **State**: Thay đổi hành vi theo trạng thái.
+- [x] **State**: Thay đổi hành vi theo trạng thái.
 - [ ] **Strategy**: Thay đổi thuật toán (Sort, Tax).
 - [ ] **Template Method**: Khung thuật toán.
 - [ ] **Visitor**: Thêm operation mà không sửa class.

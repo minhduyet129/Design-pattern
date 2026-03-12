@@ -23,6 +23,7 @@
     <Project Path="03.Behavioral/Mediator/Mediator.csproj" />
     <Project Path="03.Behavioral/Memento/Memento.csproj" />
     <Project Path="03.Behavioral/Observer/Observer.csproj" />
+    <Project Path="03.Behavioral/State/State.csproj" />
   </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />
 </Solution>
