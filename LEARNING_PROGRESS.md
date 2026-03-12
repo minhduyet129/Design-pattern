@@ -34,7 +34,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 - [x] **Chain of Responsibility**: Chuỗi xử lý request.
 - [x] **Command**: Đóng gói request (Undo/Redo).
 - [x] **Interpreter**: Xử lý ngữ pháp/ngôn ngữ.
-- [ ] **Iterator**: Duyệt danh sách.
+- [x] **Iterator**: Duyệt danh sách.
 - [ ] **Mediator**: Điều phối tương tác (Chat room).
 - [ ] **Memento**: Lưu trạng thái (Snapshot).
 - [ ] **Observer**: Pub/Sub model.

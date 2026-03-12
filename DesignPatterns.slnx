@@ -19,6 +19,7 @@
     <Project Path="03.Behavioral/ChainOfResponsibility/ChainOfResponsibility.csproj" />
     <Project Path="03.Behavioral/Command/Command.csproj" />
     <Project Path="03.Behavioral/Interpreter/Interpreter.csproj" />
+    <Project Path="03.Behavioral/Iterator/Iterator.csproj" />
   </Folder>
   <Project Path="00.Benchmarks/00.Benchmarks.csproj" />
 </Solution>
