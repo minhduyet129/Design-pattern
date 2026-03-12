@@ -33,7 +33,7 @@ Khi sang máy khác, bạn chỉ cần `git pull` và mở file này để biế
 ## 🔵 3. Behavioral Patterns (Hành vi)
 - [x] **Chain of Responsibility**: Chuỗi xử lý request.
 - [x] **Command**: Đóng gói request (Undo/Redo).
-- [ ] **Interpreter**: Xử lý ngữ pháp/ngôn ngữ.
+- [x] **Interpreter**: Xử lý ngữ pháp/ngôn ngữ.
 - [ ] **Iterator**: Duyệt danh sách.
 - [ ] **Mediator**: Điều phối tương tác (Chat room).
 - [ ] **Memento**: Lưu trạng thái (Snapshot).
